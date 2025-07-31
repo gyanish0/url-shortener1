@@ -20,7 +20,7 @@ A Next.js-based URL shortening service similar to Bitly or TinyURL, using MongoD
 
 ## Live Demo
 
-[View deployed application on Vercel](https://your-vercel-app-url.vercel.app)
+[View deployed application on Vercel](https://url-shortener1-snowy.vercel.app)
 
 ## Setup Instructions
 
@@ -35,5 +35,5 @@ A Next.js-based URL shortening service similar to Bitly or TinyURL, using MongoD
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/url-shortener.git
+   git clone https://github.com/gyanish0/url-shortener1.git
    cd url-shortener
