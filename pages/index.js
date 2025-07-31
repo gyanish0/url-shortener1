@@ -49,7 +49,7 @@ export default function Home() {
             />
             <button
               type="submit"
-              className="w-full bg-indigo-600 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700 transition"
+              className="w-full bg-indigo-600 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700 transition cursor-pointer"
             >
               Shorten URL
             </button>
@@ -68,7 +68,7 @@ export default function Home() {
               </a>
               <button
                 onClick={handleCopy}
-                className="mt-2 bg-green-500 text-white px-4 py-1 rounded hover:bg-green-600 transition"
+                className="mt-2 bg-green-500 text-white px-4 py-1 rounded hover:bg-green-600 transition cursor-pointer"
               >
                 {copied ? 'Copied!' : 'Copy to Clipboard'}
               </button>
