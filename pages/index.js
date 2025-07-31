@@ -6,9 +6,11 @@ export default function Home() {
   const [shortUrl, setShortUrl] = useState('');
   const [error, setError] = useState('');
   const [copied, setCopied] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const response = await fetch('/api/shorten', {
         method: 'POST',
@@ -20,7 +22,10 @@ export default function Home() {
       setError('');
       setCopied(false);
     } catch (err) {
+      console.error('Error shortening URL:', err);
       setError('Failed to shorten URL');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -48,11 +53,12 @@ export default function Home() {
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
             <button
+              disabled={loading}
               type="submit"
-              className="w-full bg-indigo-600 text-white py-2 rounded-lg font-semibold hover:bg-indigo-700 transition cursor-pointer"
-            >
-              Shorten URL
+              className={`w-full py-2 rounded-lg font-semibold transition ${loading ? 'bg-indigo-400 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700 cursor-pointer'} text-white`}>
+              {loading ? 'Shortening...' : 'Shorten URL'}
             </button>
+
           </form>
 
           {shortUrl && (
